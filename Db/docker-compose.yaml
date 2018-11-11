@@ -1,0 +1,28 @@
+geogamecontainer:
+  image: mysql
+  container_name: database.geogame
+  command: mysqld --user=root --verbose
+   
+  ports:
+    - "2500:3306"
+  environment:
+    MYSQL_DATABASE: "test"
+    MYSQL_USER: "test"
+    MYSQL_PASSWORD: "test"
+    MYSQL_ROOT_PASSWORD: "root"
+    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+authcontainer:
+  image: mysql
+  container_name: database.auth
+  command: mysqld --user=root --verbose
+   
+  ports:
+    - "2501:3306"
+  environment:
+    MYSQL_DATABASE: "test"
+    MYSQL_USER: "test"
+    MYSQL_PASSWORD: "test"
+    MYSQL_ROOT_PASSWORD: "root"
+    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    
