@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-marker  *ngFor="let l of data?.area.pointofInterests"  [latitude]="l.lat" [longitude]="l.lng"></agm-marker>
+
+    </agm-map>
+  </div>
+  <div class="jumbotron text-center">
+    <input [(ngModel)]="lat" placeholder="Latitude" type="text">
+    <input [(ngModel)]="lng" placeholder="Longitude" type="text">
+    <input [(ngModel)]="points" placeholder="Hoeveel POI's" type="text">
+
+  <input [(ngModel)]="playerinput" placeholder="id player" type="text"> <button (click)="addplayer()"  >Nieuwe speler toevoegen</button>
+  <button (click)="startGame()">Game starten</button>
+  <button (click)="clear()">Clear</button>
+
+  </div>
+  <ol>
+    <li *ngFor="let p of players" > <p> {{p}}</p> </li>
+  </ol>
+</div>
