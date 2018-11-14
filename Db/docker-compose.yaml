@@ -6,7 +6,7 @@ geogamecontainer:
   ports:
     - "2500:3306"
   environment:
-    MYSQL_DATABASE: "test"
+    MYSQL_DATABASE: "gamedb"
     MYSQL_USER: "test"
     MYSQL_PASSWORD: "test"
     MYSQL_ROOT_PASSWORD: "root"
@@ -20,7 +20,7 @@ authcontainer:
   ports:
     - "2501:3306"
   environment:
-    MYSQL_DATABASE: "test"
+    MYSQL_DATABASE: "authdb"
     MYSQL_USER: "test"
     MYSQL_PASSWORD: "test"
     MYSQL_ROOT_PASSWORD: "root"
